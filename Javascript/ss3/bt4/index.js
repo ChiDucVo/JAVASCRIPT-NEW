@@ -2,31 +2,31 @@ let n = parseFloat (prompt("Nhập số n:"));
 
 switch (n) {
     case 1:
-        alert("Số 1");
+        alert("Số một");
         break;
     case 2:
-        alert("Số 2");
+        alert("Số hai");
         break;
     case 3:
-        alert("Số 3");
+        alert("Số ba");
         break;
     case 4:
-        alert("Số 4");
+        alert("Số 4\bốn");
         break;
     case 5:
-        alert("Số 5");
+        alert("Số năm");
         break;
     case 6:
-        alert("Số 6");
+        alert("Số sáu");
         break;
     case 7:
-        alert("Số 7");
+        alert("Số bảy");
         break;
     case 8:
-        alert("Số 8");
+        alert("Số tám");
         break;
     case 9:
-        alert("Số 9");
+        alert("Số chín");
         break;
     default:
         alert("Số n không hợp lệ");
