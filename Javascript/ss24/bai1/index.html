@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let  array =[]
+        const inputArray = () => array = prompt("Nhập số vào đây cách nhau bằng dấu cách").split(" ").map(Number) 
+        const displayArray = () => alert(array.join(", "))
+        const findMax = () => alert(Math.max(...array))
+        const findMin = () => alert(Math.min(...array))
+        const sum = () => alert(array.reduce((a, b) => a + b, 0)) 
+        const countNumber = () => {
+            let num = prompt("Nhập số cần tim so lan xuat hien trong mang")
+            alert(array.filter(x => x == num).length)
+        }
+        const sortArray = () => alert(array.sort((a, b) => a - b).join(", "))
+        const menu = () => {
+            do {
+                let choice = prompt("1. Nhập mảng\n2. Hiển thị mảng\n3. Tìm max\n4. Tìm min\n5. Tính tổng\n6. Đếm số\n7. Sắp xếp\n8. Thoát")
+                switch (choice) {
+                    case "1":
+                        inputArray()
+                        break
+                    case "2":
+                        displayArray()
+                        break
+                    case "3":
+                        findMax()
+                        break
+                    case "4":
+                        findMin()
+                        break
+                    case "5":
+                        sum()
+                        break
+                    case "6":
+                        countNumber()
+                        break
+                    case "7":
+                        sortArray()
+                        break
+                    case "8":
+                        return
+                    default:
+                        alert("Nhập sai, vui lòng nhập lại")
+                }
+            } while (true)
+        }
+    </script>
+</body> 
+</html>

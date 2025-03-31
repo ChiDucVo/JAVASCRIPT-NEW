@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         let  array =[]
+        const inputArray = () => array = prompt("Nhập số vào đây cách nhau bằng dấu cách").split(" ").map(Number) 
+        const displayArray = () => alert(array.join(", "))
+        const findMaxWithPositions = () => {
+        let max = Math.max(...numbers);
+        let positions = numbers.map((x, i) => x === max ? i : -1).filter(i => i !== -1);
+        alert(`Số lớn nhất: ${max}, tại vị trí: ${positions.join(", ")}`);
+        }
+        const sumAndAverage = () => {
+            let sum = array.map(x => x > 0).reduce((a,b) => a+b, 0)
+            let average = sum / array.map(x => x > 0).length
+        }
+        const reverseArray = () => alert(array.reverse().join(", "))
+        const isSymmetric = () => {
+        let reversed = [...numbers].reverse(); 
+        let symmetric = numbers.every((num, index) => num === reversed[index]);
+        alert(symmetric ? "Mảng đối xứng." : "Mảng không đối xứng.");
+     } 
+     const menu = () => {
+            do {
+                let choice = prompt("1. Nhập mảng\n2. Hiển thị mảng\n3. Tìm số lớn nhất với vị trí\n4. Tính tổng và trung bình\n5. Đảo ngược mảng\n6. Kiểm tra đối xứng\n7. Thoát")
+                switch (choice) {
+                    case "1":
+                        inputArray()
+                        break
+                    case "2":
+                        displayArray()
+                        break
+                    case "3":
+                        findMaxWithPositions()
+                        break
+                    case "4":
+                        sumAndAverage()
+                        break
+                    case "5":
+                        reverseArray()
+                        break
+                    case "6":
+                        isSymmetric()
+                        break
+                    case "7":
+                        return
+                    default:
+                        alert("Nhập sai, vui lòng nhập lại")
+                }
+            } while (true)
+        }
+    </script>
+</body>
+</html>

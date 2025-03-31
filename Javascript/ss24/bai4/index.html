@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let matrix = [];
+        const inputMatrix = () => {
+            let rows = Number(prompt("Nhập số hàng của mảng: "));
+            let cols = Number(prompt("Nhập số cột của mảng: "));
+            matrix = [];
+            for (let i = 0; i < rows; i++) {
+                let row = prompt(`Nhập hàng ${i + 1} (các số cách nhau bởi dấu cách):`).split(" ").map(Number);
+                if (row.length !== cols) {
+                    alert("Số cột không đúng, vui lòng nhập lại hàng này!");
+                    i--;
+                    continue;
+                }
+                matrix.push(row);
+            }
+        }
+        const displayMatrix = () => {
+            alert("Mảng hiện tại:\n" + matrix.map(row => row.join(", ")).join("\n"));
+        }
+        const sumMatrix = () => {
+            let sum = matrix.flat().reduce((acc, num) => acc + num, 0);
+            alert("Tổng các phần tử trong mảng: " + sum);
+        }
+        let max = Math.max(...matrix.flat());
+
+        const findMaxInMatrix = () => {
+            let max = Math.max(...matrix.flat());
+            let positions = [];
+            matrix.forEach((row, i) => {
+                row.forEach((num, j) => {
+                    if (num === max) positions.push(`[${i},${j}]`);
+                })
+            })
+            alert(`Số lớn nhất: ${max}, tại vị trí: ${positions.join(", ")}`);
+        }
+
+        const rowAverage = () => {
+            let rowIndex = Number(prompt("Nhập chỉ số hàng cần tính trung bình: "));
+            let avg = matrix[rowIndex].reduce((a, b) => a + b, 0) / matrix[rowIndex].length;
+            alert(`Trung bình cộng của hàng ${rowIndex}: ${avg}`);
+        }
+        const reverseRows = () => {
+            matrix = matrix.map(row => row.reverse());
+            alert("Mảng sau khi đảo ngược các hàng:\n" + matrix.map(row => row.join(", ")).join("\n"));
+            c
+        }
+        const menu = () => {
+            do {
+                let choice = prompt(
+                    "1. Nhập mảng\n2. Hiển thị mảng\n3. Tính tổng\n4. Tìm số lớn nhất\n5. Trung bình cộng hàng\n6. Đảo ngược hàng\n7. Thoát"
+                    );
+                switch (choice) {
+                    case "1":
+                        inputMatrix();
+                        break;
+                    case "2":
+                        displayMatrix();
+                        break;
+                    case "3":
+                        sumMatrix();
+                        break;
+                    case "4":
+                        findMaxInMatrix();
+                        break;
+                    case "5":
+                        rowAverage();
+                        break;
+                    case "6":
+                        reverseRows();
+                        break;
+                    case "7":
+                        return;
+                    default:
+                        alert("Nhập sai, vui lòng nhập lại");
+                }
+            } while (true)
+        }
+    </script>
+</body>
+
+</html>

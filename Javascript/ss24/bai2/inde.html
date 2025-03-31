@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let array = []
+        const inputArray = () => array = prompt("Nhập số vào đây cách nhau bằng dấu cách").split(" ").map(Number)
+        const displayArray = () => alert(array.join(", "))
+        const findOldEven = () => {
+            let odd = array.filter(x => x % 2 != 0)
+            let even = array.filter(x => x % 2 == 0)
+            alert(`Số lẻ: ${odd.join(", ")}\nSố chẵn: ${even.join(", ")}`)
+        }
+        const average = () => alert(array.reduce((a, b) => a + b, 0) / array.length)
+        const deleteitem = () => {
+            let index = parseInt(prompt("Nhập vị trí cần xóa"))
+            array.splice(index, 1)
+            alert(array.join(", "))
+        }
+        const findSecondMax = () => {
+            let max = Math.max(...array)
+            let secondMax = Math.max(...array.filter(num => num !== max));
+            alert(`Số lớn thứ hai trong mảng là: ${secondMax}`);
+        }
+        const menu = () => {
+            do {
+                let choice = prompt(
+                    "1. Nhập mảng\n2. Hiển thị mảng\n3. Tìm số lẻ chẵn\n4. Tính trung bình\n5. Xóa phần tử\n6. Tìm số lớn thứ hai\n7. Thoát"
+                )
+                switch (choice) {
+                    case "1":
+                        inputArray()
+                        break
+                    case "2":
+                        displayArray()
+                        break
+                    case "3":
+                        findOldEven()
+                        break
+                    case "4":
+                        average()
+                        break
+                    case "5":
+                        deleteitem()
+                        break
+                    case "6":
+                        findSecondMax()
+                        break
+                    case "7":
+                        return
+                    default:
+                        alert("Nhập sai, vui lòng nhập lại")
+                }
+            } while (true)
+        }
+    </script>
+</body>
+
+</html>

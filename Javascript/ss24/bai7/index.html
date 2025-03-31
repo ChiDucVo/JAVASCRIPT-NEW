@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let array = []
+        const inputArray = () => array = prompt("Nhập chuỗi vào đây cách nhau bằng dấu cách").split(" ")
+        const displayArray = () => alert(array.join(" "))
+        const deleteSpaceinStartEnd = () => alert(array.map(x => x.trim()).join(" "))
+        const reverseArray = () => alert(array.reverse().join(", "))
+        const countWord = () => alert(array.filter(x => x.trim() !== "").length)
+        const findAndReplace = () => {
+            let char = prompt("Mời bạn nhập vào kí tự cầm tìm ")
+            let replace = prompt(" Mời bạn nhập kí tự cần thay thế")
+            let newArr = arr.map(x => x === char ? replace : x)
+            alert(`Mảng sau khi sắp xếp là ${newArr}`)
+        }
+    </script>
+</body>
+
+</html>

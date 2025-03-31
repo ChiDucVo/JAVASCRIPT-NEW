@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let array = []
+        const inputArray = () => array = prompt("Nhập chuỗi vào đây cách nhau bằng dấu cách").split(" ")
+        const displayArray = () => alert(array.join(" "))
+        const lenngthOfString = () => alert(array.map(x => x.length))
+        const countdigit = () => {
+            let num = prompt("Nhập ki tu cần tim so lan xuat hien trong mang")
+            alert(array.filter(x => x == num).length)
+        }
+        const isSymmetric = () => {
+            let reversed = [...numbers].reverse();
+            let symmetric = numbers.every((num, index) => num === reversed[index]);
+            alert(symmetric ? "Mảng đối xứng." : "Mảng không đối xứng.");
+        }
+        const upCase = () => alert(array.map(x => x.charAt(0).toUpperCase() + x.slice(1)))
+        const menu = () => {
+            do {
+                let choice = prompt(
+                    "1. Nhập mảng\n2. Hiển thị mảng\n3. Độ dài của chuỗi\n4. Đếm số lần xuất hiện của kí tự\n5. Kiểm tra đối xứng\n6. Viết hoa chữ cái đầu\n7. Thoát"
+                )
+                switch (choice) {
+                    case "1":
+                        inputArray()
+                        break
+                    case "2":
+                        displayArray()
+                        break
+                    case "3":
+                        lenngthOfString()
+                        break
+                    case "4":
+                        countdigit()
+                        break
+                    case "5":
+                        isSymmetric()
+                        break
+                    case "6":
+                        upCase()
+                        break
+                    case "7":
+                        return
+                    default:
+                        alert("Nhập sai, vui lòng nhập lại")
+                }
+            } while (true)
+        }
+    </script>
+</body>
+
+</html>
