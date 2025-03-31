@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function checkDoiXung(str) {
+    let reversedStr = str.split("").reverse().join(""); 
+    return str === reversedStr ? "là chuỗi đối xứng" : "không phải chuỗi đối xứng";
+}
+
+console.log(checkDoiXung("hello"));
+console.log(checkDoiXung("aloola"));
+console.log(checkDoiXung("12345"));
+    </script>
+</body>
+</html>

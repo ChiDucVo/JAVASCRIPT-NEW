@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function checkPrime(number){
+    if(isNaN(number)){
+        return "dữ liệu không hợp lệ";
+    }
+    if(number<2){
+        return "không phải là số nguyên tố";
+    }
+    
+    for(let i = 2;i<= Math.sqrt(number);i++){
+        if(number%i === 0){
+            return "không phải là số nguyên tố";
+        }
+    }
+    return "là số nguyên tố";
+}
+
+console.log(checkPrime(17));
+console.log(checkPrime(6));
+console.log(checkPrime('text'));
+    </script>
+</body>
+</html>
