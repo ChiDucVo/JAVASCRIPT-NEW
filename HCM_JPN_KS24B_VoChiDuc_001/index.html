@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Sinh Viên</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Quản Lý Sinh Viên</h1>
+        
+        <div class="form-wrapper">
+            <input type="text" id="name" placeholder="Họ và tên">
+            <p class="error" id="name-error">Họ và tên không được để trống.</p>
+
+            <input type="text" id="id" placeholder="Mã số sinh viên">
+            <p class="error" id="id-error">Mã số sinh viên không được để trống.</p>
+
+            <input type="email" id="email" placeholder="Email">
+            <p class="error" id="email-error">Email không hợp lệ.</p>
+
+            <input type="text" id="class" placeholder="Lớp">
+            <p class="error" id="class-error">Lớp không được để trống.</p>
+
+            <button id="submit-btn" class="btn-add">Thêm sinh viên</button>
+        </div>
+
+        <input type="text" id="search-input" placeholder="Tìm kiếm theo tên...">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Họ tên</th>
+                    <th>MSSV</th>
+                    <th>Email</th>
+                    <th>Lớp</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody id="student-table">
+                <tr>
+                    <td>Trần Minh Cường</td>
+                    <td>SV001</td>
+                    <td>cuongtm@gmail.com</td>
+                    <td>HN_ENG_KS24</td>
+                    <td>
+                        <button class="edit" onclick="editStudent()">Sửa</button>
+                        <button class="delete" onclick="deleteStudent()">Xoá</button>
+                    </td>
+                </tr>
+                <!--  -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="/index.js"></script>
+</body>
+
+</html>
